@@ -7,7 +7,8 @@ var velocity = Vector2()
 var is_hold_tool = false
 var is_hold_fire = false
 signal firetool_showup 
-signal toolbox_showup 
+signal toolbox_showup
+var is_playing = false 
 func _ready():
 	connect("fire_showup",$"firetools.tscn","show_up")
 
@@ -24,21 +25,42 @@ func get_input():
 	var rotation_dir = 0 
 	if Input.is_action_pressed("ui_left"):
 		x_dir -= 1
+		if not is_playing:
+			$AnimatedSprite.play("run")
+			is_playing = true
 	if Input.is_action_pressed("ui_right"):
 		x_dir += 1
+		if not is_playing:
+			$AnimatedSprite.play("run")
+			is_playing = true
 	if Input.is_action_pressed("ui_down"):
 		y_dir += 1
+		if not is_playing:
+			$AnimatedSprite.play("run")
+			is_playing = true
 	if Input.is_action_pressed("ui_up"):
 		y_dir -= 1
+		if not is_playing:
+			$AnimatedSprite.play("run")
+			is_playing = true
+	
+
 	
 	if x_dir != 0:
 		velocity.x = lerp(velocity.x, x_dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+		if is_playing:
+			$AnimatedSprite.stop()
+			is_playing = false
 	if y_dir != 0:
 		velocity.y = lerp(velocity.y, y_dir * speed, acceleration)
 	else:
 		velocity.y = lerp(velocity.y, 0, friction)
+		if is_playing:
+			$AnimatedSprite.stop()
+			is_playing = false
+		
 	
 func hold_toolbox():
 	if Input.is_action_pressed("ui_pick"):

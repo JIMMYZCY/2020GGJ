@@ -7,26 +7,27 @@
 [ext_resource path="res://Animations/player-frame_00005.png" type="Texture" id=5]
 [ext_resource path="res://Animations/player-frame_00002.png" type="Texture" id=6]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "default",
+"name": "run",
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 47.8296, 54.8589 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 452.287, 330.573 )
 script = ExtResource( 2 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 13.4125, 81.9778 )
 rotation = 1.5708
-frames = SubResource( 2 )
+frames = SubResource( 1 )
+animation = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8.16223, -4.08115 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
