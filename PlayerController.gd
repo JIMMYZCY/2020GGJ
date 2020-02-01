@@ -37,3 +37,5 @@ func get_input():
 func is_hold_tools():
 	if Input.is_action_pressed("ui_pick"):
 		is_hold_tool = true if is_hold_tool == false else false
+		print(is_hold_tool)
+		
