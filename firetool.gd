@@ -11,9 +11,10 @@ func _on_Area2D_body_entered(body):
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_pick"):
+		hide()
 		emit_signal("pickfire")
 		pickable = false
-		hide()
+		
 		
 func fire_show_up(postion):
 	var x_pos = position.x
