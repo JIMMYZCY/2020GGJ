@@ -10,7 +10,8 @@ signal firetool_showup
 signal toolbox_showup
 var is_playing = false 
 func _ready():
-	connect("fire_showup",$"firetools.tscn","show_up")
+	connect("firetool_showup",$"firetools.tscn","fire_show_up")
+
 
 func _physics_process(delta):
 	get_input()
@@ -65,13 +66,15 @@ func get_input():
 func hold_toolbox():
 	if Input.is_action_pressed("ui_pick"):
 		is_hold_tool = true if is_hold_tool == false else false
-		if is_hold_tool == false:
-			emit_signal("firetool_showup")
-		print(is_hold_tool)
+	if is_hold_tool == false:
+		emit_signal("toolbox_showup")
+		#print(is_hold_tool)
 	return is_hold_tool
 		
 func hold_fire():
 	if Input.is_action_pressed("ui_pick"):
 		is_hold_fire = true if is_hold_fire == false else false
+	if is_hold_fire == false:
+		emit_signal("firetool_showup")
 		print(is_hold_fire)
 	return is_hold_fire
