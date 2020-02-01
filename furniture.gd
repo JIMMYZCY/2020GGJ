@@ -11,7 +11,7 @@ func _process(delta):
 	if ms > 9:
 		s += 1
 	if s == 40:
-		pass # go into fail branch
+		pass
 	if is_on_fire == false:
 		ms = 0
 		s = 0		
