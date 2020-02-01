@@ -1,0 +1,33 @@
+extends KinematicBody2D
+
+var friction = 0.08
+var acceleration = 0.5
+var speed = 500
+var velocity = Vector2()
+
+func _physics_process(delta):
+	get_input()
+	move_and_slide(velocity)
+
+
+func get_input():
+	var x_dir = 0
+	var y_dir = 0
+	if Input.is_action_pressed("ui_left"):
+		x_dir -= 1
+	if Input.is_action_pressed("ui_right"):
+		x_dir += 1
+	if Input.is_action_pressed("ui_down"):
+		y_dir += 1
+	if Input.is_action_pressed("ui_up"):
+		y_dir -= 1
+	
+	if x_dir != 0:
+		velocity.x = lerp(velocity.x, x_dir * speed, acceleration)
+	else:
+		velocity.x = lerp(velocity.x, 0, friction)
+	if y_dir != 0:
+		velocity.y = lerp(velocity.y, y_dir * speed, acceleration)
+	else:
+		velocity.y = lerp(velocity.y, 0, friction)
+	
