@@ -4,7 +4,7 @@ var friction = 0.08
 var acceleration = 0.5
 var speed = 500
 var velocity = Vector2()
-
+var is_hold_tool = false
 func _physics_process(delta):
 	get_input()
 	rotation = velocity.angle()
@@ -34,3 +34,6 @@ func get_input():
 	else:
 		velocity.y = lerp(velocity.y, 0, friction)
 	
+func is_hold_tools():
+	if Input.is_action_pressed("ui_pick"):
+		is_hold_tool = true if is_hold_tool == false else false
