@@ -24,7 +24,6 @@ visible = false
 position = Vector2( 25, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-visible = false
 show_behind_parent = true
 position = Vector2( 1001.92, 293.534 )
 shape = SubResource( 1 )
@@ -40,7 +39,6 @@ shape = SubResource( 2 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-visible = false
 position = Vector2( 510.909, 598.616 )
 shape = SubResource( 2 )
 
