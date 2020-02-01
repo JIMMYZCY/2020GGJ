@@ -12,7 +12,6 @@ extents = Vector2( 563.779, 11.7459 )
 position = Vector2( -0.658066, 8.8951 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 show_behind_parent = true
@@ -20,27 +19,22 @@ position = Vector2( 2.32001, 301.468 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2( 25, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-visible = false
 show_behind_parent = true
 position = Vector2( 1001.92, 293.534 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 514.082, -15.8667 )
 shape = SubResource( 4 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-visible = false
 position = Vector2( 510.909, 598.616 )
 shape = SubResource( 4 )
 
