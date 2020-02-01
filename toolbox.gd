@@ -14,6 +14,13 @@ func _physics_process(delta):
 		emit_signal("picktool")
 		pickable = false
 		hide()
+		
+func tool_show_up(postion):
+	var x_pos = position.x
+	var y_pos = position.y
+	self.transform.x = x_pos
+	self.transform.y = y_pos
+	show()	
 				
 				
 	

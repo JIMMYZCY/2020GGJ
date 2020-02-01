@@ -15,9 +15,12 @@ func _physics_process(delta):
 		pickable = false
 		hide()
 		
-func show_up():
-	var position_123 = get_node()
-	
+func fire_show_up(postion):
+	var x_pos = position.x
+	var y_pos = position.y
+	self.transform.x = x_pos
+	self.transform.y = y_pos
+	show()	
 				
 				
 	
