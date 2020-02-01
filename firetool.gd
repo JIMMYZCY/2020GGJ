@@ -13,7 +13,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_pick"):
 		emit_signal("pickfire")
 		pickable = false
-		queue_free()
+		hide()
+		
+func show_up():
+	var position_123 = get_node()
+	
 				
 				
 	
