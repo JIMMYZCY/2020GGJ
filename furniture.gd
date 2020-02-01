@@ -3,14 +3,11 @@ var is_on_fire = false
 var can_off_fire = false
 var ms
 var s
-
-func _ready():
-	connect("a_signal", self, "on_fire")
 	
 func _process(delta):
 	if ms > 9:
 		s += 1
-	if s == 40:
+	if s >= 40:
 		pass
 	if is_on_fire == false:
 		ms = 0
@@ -29,5 +26,4 @@ func off_fire():
 
 func _on_Timer_timeout():
 	if is_on_fire == true:
-		ms +=1
-	pass # Replace with function body.
+		ms += 1
