@@ -3,7 +3,7 @@ extends Area2D
 var pickable = false
 signal picktool
 func _ready():
-	connect("picktool",$"Player.tscn","is_hold_tools")
+	connect("picktool",$"Player.tscn","hold_tool")
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":

@@ -1,9 +1,9 @@
 extends Area2D
 
 var pickable = false
-signal picktool
+signal pickfire
 func _ready():
-	connect("picktool",$"Player.tscn","is_hold_tools")
+	connect("pickfire",$"Player.tscn","hold_fire")
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
@@ -11,7 +11,7 @@ func _on_Area2D_body_entered(body):
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_pick"):
-		emit_signal("picktool")
+		emit_signal("pickfire")
 		pickable = false
 		queue_free()
 				
