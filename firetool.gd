@@ -6,10 +6,11 @@ var dropable = false
 signal pickfire
 
 func _on_firebox_body_entered(body):
-	if body.is_hold_tool:
-		body.can_drop = false
-	elif body.get_name() == "Player":	
-		pickable = true
+	if body.get_name() == "Player":
+		if body.is_hold_tool:
+			body.can_drop = false
+		elif body.get_name() == "Player":	
+			pickable = true
 	
 
 func _on_firebox_body_exited(body):
