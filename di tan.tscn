@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://di tan.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 58.1155
+height = 102.746
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 33.4613
+height = 86.073
+
+[node name="di tan" type="Area2D"]
+position = Vector2( 592.466, 345.274 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 10.3604, 3.76724 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_furniture_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
