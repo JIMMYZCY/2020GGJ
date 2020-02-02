@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Short Circuit-SoundBible.com-1450168875.wav-0d00a75d70eb7a026fe3c9bce3de1bb0.sample"
+
+[deps]
+
+source_file="res://Short Circuit-SoundBible.com-1450168875.wav"
+dest_files=[ "res://.import/Short Circuit-SoundBible.com-1450168875.wav-0d00a75d70eb7a026fe3c9bce3de1bb0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
