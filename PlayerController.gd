@@ -6,19 +6,17 @@ var speed = 500
 var velocity = Vector2()
 var is_hold_tool = false
 var is_hold_fire = false
-signal firetool_showup 
-signal toolbox_showup
+signal firetool_showup(position)
 var is_playing = false 
-func _ready():
-	connect("firetool_showup",$"firetools.tscn","fire_show_up")
 
 
 func _physics_process(delta):
 	get_input()
+	drop()
 	rotation = velocity.angle()
 	move_and_slide(velocity)
 	velocity.normalized()
-
+	
 
 func get_input():
 	var x_dir = 0
@@ -57,19 +55,17 @@ func get_input():
 			$AnimatedSprite.stop()
 			is_playing = false
 		
+
+
+func drop():
+	if is_hold_fire and Input.is_action_pressed("ui_drop"):
+		is_hold_fire = false
+		print("drop")
+		print(self.transform)
+		emit_signal("firetool_showup",self.global_position)
+
+
+func _on_firebox_hide():
+	print("s")
+	is_hold_fire = true
 	
-func hold_toolbox():
-	if Input.is_action_pressed("ui_pick"):
-		is_hold_tool = true if is_hold_tool == false else false
-	if is_hold_tool == false:
-		emit_signal("toolbox_showup")
-		#print(is_hold_tool)
-	return is_hold_tool
-		
-func hold_fire():
-	if Input.is_action_pressed("ui_pick"):
-		is_hold_fire = true if is_hold_fire == false else false
-	if is_hold_fire == false:
-		emit_signal("firetool_showup")
-		print(is_hold_fire)
-	return is_hold_fire

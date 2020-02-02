@@ -16,6 +16,7 @@ func _physics_process(delta):
 		hide()
 		
 func tool_show_up(postion):
+	print(position)
 	var x_pos = position.x
 	var y_pos = position.y
 	self.transform.x = x_pos

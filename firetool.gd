@@ -1,27 +1,27 @@
 extends Area2D
 
 var pickable = false
+var is_on_hand = false
 signal pickfire
-func _ready():
-	connect("pickfire",$"Player.tscn","hold_fire")
 
-func _on_Area2D_body_entered(body):
+func _on_firebox_body_entered(body):
 	if body.get_name() == "Player":
 		pickable = true
 
-func _physics_process(delta):
-	if Input.is_action_pressed("ui_pick"):
-		hide()
-		emit_signal("pickfire")
+func _on_firebox_body_exited(body):
+	if body.get_name() == "Player":
 		pickable = false
-	fire_show_up(position)
-		
-func fire_show_up(postion):
-	var x_pos = position.x
-	var y_pos = position.y
-	self.transform.x = x_pos
-	self.transform.y = y_pos
-	show()	
-				
-				
-	
+
+func _physics_process(delta):
+	if pickable and Input.is_action_pressed("ui_pick"):
+		hide()
+		pickable = false
+
+func _on_Player_firetool_showup(position):
+	print(position)
+	pickable = true
+	self.set_global_position(position)
+	show()
+
+
+
