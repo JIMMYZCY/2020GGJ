@@ -32,8 +32,9 @@ func _process(delta):
 		print("fire off")
 	
 func on_fire():
-	is_on_fire = true
-	emit_signal("warning")
+	if not is_on_fire:
+		emit_signal("warning")
+		is_on_fire = true
 	print("is_on_fire")
 	
 	

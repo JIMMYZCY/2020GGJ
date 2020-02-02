@@ -93,5 +93,6 @@ collision_mask = 3
 [connection signal="body_entered" from="firebox" to="Player" method="_on_firebox_body_entered"]
 [connection signal="body_exited" from="firebox" to="Player" method="_on_firebox_body_exited"]
 [connection signal="hide" from="firebox" to="Player" method="_on_firebox_hide"]
+[connection signal="warning" from="furniture" to="Player" method="_on_furniture_warning"]
 [connection signal="firetool_showup" from="Player" to="firebox" method="_on_Player_firetool_showup"]
 [connection signal="toolbox_showup" from="Player" to="toolbox" method="_on_Player_toolbox_showup"]

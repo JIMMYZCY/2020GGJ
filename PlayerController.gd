@@ -109,24 +109,6 @@ func _on_firebox_hide():
 func _on_toolbox_hide():
 	is_hold_tool = true
 	can_drop = true
-	
 
-
-func _on_Main_hide():
-	pass # Replace with function body.
-
-
-func _on_toolbox_body_entered():
-	pass # Replace with function body.
-
-
-func _on_firebox_body_entered():
-	pass # Replace with function body.
-
-
-func _on_firebox_body_exited():
-	pass # Replace with function body.
-
-
-func _on_toolbox_body_exited():
-	pass # Replace with function body.
+func _on_furniture_warning():
+	print("warning")
