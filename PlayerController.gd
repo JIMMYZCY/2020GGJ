@@ -27,19 +27,46 @@ func get_input():
 	var rotation_dir = 0 
 	if Input.is_action_pressed("ui_left"):
 		x_dir -= 1
-		$AnimatedSprite.play("run")
+		if is_hold_fire:
+			$AnimatedSprite.play("hold_fire_ex")
+		elif is_hold_tool:
+			$AnimatedSprite.play("hold_tool")
+		else:
+			$AnimatedSprite.play("run")
+	
 	elif Input.is_action_pressed("ui_right"):
 		x_dir += 1
-		$AnimatedSprite.play("run")
+		if is_hold_fire:
+			$AnimatedSprite.play("hold_fire_ex")
+		elif is_hold_tool:
+			$AnimatedSprite.play("hold_tool")
+		else:
+			$AnimatedSprite.play("run")
+	
 	elif Input.is_action_pressed("ui_down"):
 		y_dir += 1
-		$AnimatedSprite.play("run")
-		
+		if is_hold_fire:
+			$AnimatedSprite.play("hold_fire_ex")
+		elif is_hold_tool:
+			$AnimatedSprite.play("hold_tool")
+		else:
+			$AnimatedSprite.play("run")
+	
 	elif Input.is_action_pressed("ui_up"):
 		y_dir -= 1
-		$AnimatedSprite.play("run")
+		if is_hold_fire:
+			$AnimatedSprite.play("hold_fire_ex")
+		elif is_hold_tool:
+			$AnimatedSprite.play("hold_tool")
+		else:
+			$AnimatedSprite.play("run")
 	else:
-		$AnimatedSprite.play("idle")
+		if is_hold_fire:
+			$AnimatedSprite.play("hold_fire_ex")
+		elif is_hold_tool:
+			$AnimatedSprite.play("hold_tool")
+		else:
+			$AnimatedSprite.play("idle")
 	
 
 	
