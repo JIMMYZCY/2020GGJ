@@ -43,15 +43,15 @@ func on_fire():
 		is_on_fire = true
 	if is_on_fire:
 		$AnimatedSprite.show()
-		$AnimatedSprite.play("on_fire")
+		$AnimatedSprite.play("on_elec")
 		$AudioStreamPlayer2D.play()
 	print("is_on_fire")
 	
 	
 
 func _on_furniture_body_entered(body):
-	print(str(body.is_hold_fire) + "hold fire")
-	if body.is_hold_fire and is_on_fire:
+	print(str(body.is_hold_tool) + "hold fire")
+	if body.is_hold_tool and is_on_fire:
 		can_off_fire = true
 
 	
