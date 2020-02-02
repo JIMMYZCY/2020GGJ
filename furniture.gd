@@ -31,12 +31,16 @@ func _process(delta):
 		difficulty-=2 
 		can_off_fire = false
 		is_on_fire = false
+		$AnimatedSprite.hide()
 		print("fire off")
 	
 func on_fire():
 	if not is_on_fire:
 		emit_signal("warning")
 		is_on_fire = true
+	if is_on_fire:
+		$AnimatedSprite.show()
+		$AnimatedSprite.play("on_fire")
 	print("is_on_fire")
 	
 	
