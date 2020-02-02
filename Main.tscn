@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tres" type="TileSet" id=2]
 [ext_resource path="res://furnitures.png" type="Texture" id=3]
+[ext_resource path="res://toolbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://firebox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.8562, 298.936 )
@@ -66,3 +68,9 @@ texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 369.276, 268.134 )
+
+[node name="toolbox" parent="." instance=ExtResource( 4 )]
+position = Vector2( 401.887, 115.481 )
+
+[node name="firebox" parent="." instance=ExtResource( 5 )]
+position = Vector2( 576.203, 572.924 )
