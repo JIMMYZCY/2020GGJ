@@ -29,6 +29,16 @@ animations = [ {
 "name": "hold_fire_ex",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "fire_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "hold_tool",
@@ -38,20 +48,10 @@ animations = [ {
 "loop": true,
 "name": "tool_idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "fire_idle",
-"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 47.8296, 54.8589 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 34.1053
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 452.287, 330.573 )
@@ -64,5 +64,4 @@ frames = SubResource( 1 )
 animation = "tool_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -8.16223, -4.08115 )
 shape = SubResource( 2 )
