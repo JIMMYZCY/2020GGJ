@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 var is_on_fire = false
 var can_off_fire = false
 const fire_num = 3
@@ -7,6 +7,7 @@ var ms = 0
 var s = 0
 var s2 = 0
 var ms2 = 0
+signal warning
 	
 func _process(delta):
 	randomize()
@@ -25,22 +26,23 @@ func _process(delta):
 	if is_on_fire == false:
 		ms = 0
 		s = 0
-	detect()
+	if can_off_fire and Input.is_action_pressed("ui_fix"):
+		can_off_fire = false
+		is_on_fire = false
+		print("fire off")
 	
 func on_fire():
 	is_on_fire = true
+	emit_signal("warning")
 	print("is_on_fire")
 	
+	
 
-#func _on_furniture_body_entered(body):
-#	print(body.is_hold_fire)
-#	if body.is_hold_fire and is_on_fire and Input.is_action_pressed("ui_fix"):
-#		print("fire off")
-#		is_on_fire = false
+func _on_furniture_body_entered(body):
+	print(body.is_hold_fire)
+	if body.is_hold_fire and is_on_fire:
+		can_off_fire = true
 
-func detect():
-	var body = get_colliding_bodies()
-	print(body)
 	
 
 func _on_Timer_timeout():
