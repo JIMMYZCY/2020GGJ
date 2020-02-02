@@ -14,7 +14,7 @@ func _physics_process(delta):
 		hide()
 		emit_signal("pickfire")
 		pickable = false
-		
+	fire_show_up(position)
 		
 func fire_show_up(postion):
 	var x_pos = position.x
