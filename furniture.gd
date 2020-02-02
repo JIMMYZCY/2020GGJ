@@ -1,12 +1,12 @@
-extends StaticBody2D
+extends RigidBody2D
 var is_on_fire = false
 var can_off_fire = false
 const fire_num = 3
 var temp = randi()%2+1
-var ms
-var s
-var s2
-var ms2
+var ms = 0
+var s = 0
+var s2 = 0
+var ms2 = 0
 	
 func _process(delta):
 	if ms > 9:
@@ -15,17 +15,19 @@ func _process(delta):
 	if ms2 > 9:
 		s2 += 1
 		ms2 = 0
-		temp = randi()%2+1
+		temp = randi()%3+1
+		print(temp)
 		if temp == fire_num:
 			on_fire()
 	if s >= 40:
-		pass
+		print("Boom")
 	if is_on_fire == false:
 		ms = 0
 		s = 0	
 	
 func on_fire():
 	is_on_fire = true
+	print("is_on_fire")
 	
 func _on_furniture_body_entered(body):
 	if get_node("res://Player.tscn").is_hold_fire and is_on_fire:
