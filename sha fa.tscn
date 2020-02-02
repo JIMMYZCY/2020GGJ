@@ -3,19 +3,19 @@
 [ext_resource path="res://sha fa.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 148.939, 140.429 )
+extents = Vector2( 90.0583, 94.2479 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 104.119, 104.432 )
+extents = Vector2( 56.7835, 80.1873 )
 
-[node name="zhuo zi" type="Area2D"]
-position = Vector2( 789.6, 93.795 )
+[node name="sha fa" type="Area2D"]
+position = Vector2( 853.099, 60.314 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 80.8163, 58.8805 )
+position = Vector2( 79.6618, 39.2537 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -33,12 +33,12 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 88.8978, 31.172 )
+position = Vector2( 79.6617, 33.481 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 105.374, 66.316 )
-scale = Vector2( 1.37064, 1.37064 )
+position = Vector2( 63.7815, 58.8116 )
+scale = Vector2( 1.10225, 1.10225 )
 texture = ExtResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_furniture_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
