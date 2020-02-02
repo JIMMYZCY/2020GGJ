@@ -6,6 +6,7 @@ var speed = 500
 var velocity = Vector2()
 var is_hold_tool = false
 var is_hold_fire = false
+var can_drop = true
 signal firetool_showup(position)
 signal toolbox_showup(position)
 var is_playing = false 
@@ -60,14 +61,14 @@ func get_input():
 
 
 func dropfire():
-	if is_hold_fire and Input.is_action_pressed("ui_drop"):
+	if is_hold_fire and Input.is_action_pressed("ui_drop") and can_drop:
 		is_hold_fire = false
 		print("drop")
 		print(self.transform)
 		emit_signal("firetool_showup",self.global_position)
 
 func droptool():
-	if is_hold_tool and Input.is_action_pressed("ui_drop"):
+	if is_hold_tool and Input.is_action_pressed("ui_drop") and can_drop:
 		is_hold_tool = false
 		print('boxdrop')
 		emit_signal("toolbox_showup",self.global_position)
@@ -76,7 +77,9 @@ func droptool():
 func _on_firebox_hide():
 	print("s")
 	is_hold_fire = true
+	can_drop = true
 	
 func _on_toolbox_hide():
 	is_hold_tool = true
+	can_drop = true
 	
