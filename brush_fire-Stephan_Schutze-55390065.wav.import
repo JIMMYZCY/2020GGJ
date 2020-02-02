@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/brush_fire-Stephan_Schutze-55390065.wav-49653f9ef7331f827806f1c16fb5f6c5.sample"
+
+[deps]
+
+source_file="res://brush_fire-Stephan_Schutze-55390065.wav"
+dest_files=[ "res://.import/brush_fire-Stephan_Schutze-55390065.wav-49653f9ef7331f827806f1c16fb5f6c5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

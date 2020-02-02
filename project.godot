@@ -65,6 +65,12 @@ ui_drop={
  ]
 }
 
+[physics]
+
+2d/physics_engine="GodotPhysics"
+2d/default_linear_damp=10.0
+2d/default_angular_damp=5.0
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
