@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sha fa.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 148.939, 140.429 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 104.119, 104.432 )
+
+[node name="zhuo zi" type="Area2D"]
+position = Vector2( 789.6, 93.795 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 80.8163, 58.8805 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 26.3477, -1.36084 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 88.8978, 31.172 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 105.374, 66.316 )
+scale = Vector2( 1.37064, 1.37064 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_furniture_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
