@@ -24,20 +24,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
-"name": "hold_fire_ex",
+"name": "tool_idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "hold_tool",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "tool_idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
@@ -47,6 +42,11 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "hold_fire_ex",
 "speed": 10.0
 } ]
 

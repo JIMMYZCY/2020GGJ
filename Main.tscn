@@ -53,6 +53,7 @@ tile_data = PoolIntArray( -131073, -1073741824, 0, -196608, -1073741824, 0, -196
 [node name="wall" type="Node" parent="."]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="wall"]
+visible = false
 position = Vector2( -0.658066, 8.8951 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="wall/StaticBody2D2"]
@@ -124,7 +125,6 @@ rotation = -1.58359
 [node name="dian shi" parent="furniture2" instance=ExtResource( 12 )]
 position = Vector2( 762.172, 107.023 )
 rotation = -0.0115041
-scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 0
