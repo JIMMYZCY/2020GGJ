@@ -34,10 +34,20 @@ animations = [ {
 "name": "hold_tool",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "tool_idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "fire_idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -51,7 +61,7 @@ script = ExtResource( 2 )
 position = Vector2( 13.4125, 81.9778 )
 rotation = 1.5708
 frames = SubResource( 1 )
-animation = "hold_tool"
+animation = "tool_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8.16223, -4.08115 )

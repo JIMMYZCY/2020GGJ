@@ -62,9 +62,9 @@ func get_input():
 			$AnimatedSprite.play("run")
 	else:
 		if is_hold_fire:
-			$AnimatedSprite.play("hold_fire_ex")
+			$AnimatedSprite.play("fire_idle")
 		elif is_hold_tool:
-			$AnimatedSprite.play("hold_tool")
+			$AnimatedSprite.play("tool_idle")
 		else:
 			$AnimatedSprite.play("idle")
 	
