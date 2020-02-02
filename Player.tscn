@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Animations/player-frame_00001.png" type="Texture" id=1]
 [ext_resource path="res://PlayerController.gd" type="Script" id=2]
@@ -6,12 +6,32 @@
 [ext_resource path="res://Animations/player-frame_00003.png" type="Texture" id=4]
 [ext_resource path="res://Animations/player-frame_00005.png" type="Texture" id=5]
 [ext_resource path="res://Animations/player-frame_00002.png" type="Texture" id=6]
+[ext_resource path="res://Animations/hold_fire_frame_00005.png" type="Texture" id=7]
+[ext_resource path="res://Animations/hold_fire_frame_00001.png" type="Texture" id=8]
+[ext_resource path="res://Animations/hold_fire_frame_00004.png" type="Texture" id=9]
+[ext_resource path="res://Animations/hold_fire_frame_00002.png" type="Texture" id=10]
+[ext_resource path="res://Animations/hold_fire_frame_00003.png" type="Texture" id=11]
+[ext_resource path="res://Animations/hold_tool_frame_00002.png" type="Texture" id=12]
+[ext_resource path="res://Animations/hold_tool_frame_00004.png" type="Texture" id=13]
+[ext_resource path="res://Animations/hold_tool_frame_00003.png" type="Texture" id=14]
+[ext_resource path="res://Animations/hold_tool_frame_00005.png" type="Texture" id=15]
+[ext_resource path="res://Animations/hold_tool_frame_00001.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "hold_fire_ex",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "hold_tool",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
@@ -31,7 +51,7 @@ script = ExtResource( 2 )
 position = Vector2( 13.4125, 81.9778 )
 rotation = 1.5708
 frames = SubResource( 1 )
-animation = "idle"
+animation = "hold_tool"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8.16223, -4.08115 )
