@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=1]
+
+[node name="Global Timer" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 60.2641
+margin_top = 63.6596
+margin_right = 273.264
+margin_bottom = 126.66
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="RichTextLabel"]
+wait_time = 0.1
+autostart = true
+[connection signal="timeout" from="RichTextLabel/Timer" to="RichTextLabel" method="_on_Timer_timeout"]
