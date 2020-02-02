@@ -7,6 +7,7 @@ var ms = 0
 var s = 0
 var s2 = 0
 var ms2 = 0
+var difficulty = 30
 signal warning
 	
 func _process(delta):
@@ -17,16 +18,17 @@ func _process(delta):
 	if ms2 > 9:
 		s2 += 1
 		ms2 = 0
-		temp = randi()%3 + 1
+		temp = randi()%difficulty + 1
 		print(temp)
-		if temp == fire_num:
+		if temp <= fire_num:
 			on_fire()
 	if s >= 40:
 		print("Boom")
 	if is_on_fire == false:
 		ms = 0
 		s = 0
-	if can_off_fire and Input.is_action_pressed("ui_fix"):
+	if can_off_fire and Input.is_action_just_pressed("ui_fix"):
+		difficulty-=2 
 		can_off_fire = false
 		is_on_fire = false
 		print("fire off")
