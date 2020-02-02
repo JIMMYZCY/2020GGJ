@@ -34,6 +34,7 @@ func _process(delta):
 		can_off_fire = false
 		is_on_fire = false
 		$AnimatedSprite.hide()
+		$AudioStreamPlayer2D.stop()
 		print("fire off")
 	
 func on_fire():
@@ -43,6 +44,7 @@ func on_fire():
 	if is_on_fire:
 		$AnimatedSprite.show()
 		$AnimatedSprite.play("on_fire")
+		$AudioStreamPlayer2D.play()
 	print("is_on_fire")
 	
 	

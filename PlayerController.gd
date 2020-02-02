@@ -112,4 +112,4 @@ func _on_toolbox_hide():
 
 func _on_furniture_warning():
 	print("warning")
-	$AudioStreamPlayer2D.play()
+
