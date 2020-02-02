@@ -20,3 +20,4 @@ shape = SubResource( 1 )
 position = Vector2( 3.40259, 0.268387 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_firebox_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_firebox_body_exited"]

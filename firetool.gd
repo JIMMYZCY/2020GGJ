@@ -1,7 +1,7 @@
 extends Area2D
 
 var pickable = false
-var is_on_hand = false
+#var is_on_hand = false
 signal pickfire
 
 func _on_firebox_body_entered(body):

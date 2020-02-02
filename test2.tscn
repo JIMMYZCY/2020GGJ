@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://firebox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://toolbox.tscn" type="PackedScene" id=3]
 
 [node name="test2" type="Node2D"]
 
@@ -10,7 +11,11 @@ position = Vector2( 330.956, 259.548 )
 
 [node name="firebox" parent="." instance=ExtResource( 2 )]
 position = Vector2( 536.257, 266.417 )
+
+[node name="toolbox" parent="." instance=ExtResource( 3 )]
+position = Vector2( 117.616, 98.3986 )
 [connection signal="hide" from="." to="Player" method="_on_test2_hide"]
 [connection signal="firetool_showup" from="Player" to="firebox" method="_on_Player_firetool_showup"]
-[connection signal="body_exited" from="firebox" to="firebox" method="_on_firebox_body_exited"]
+[connection signal="toolbox_showup" from="Player" to="toolbox" method="_on_Player_toolbox_showup"]
 [connection signal="hide" from="firebox" to="Player" method="_on_firebox_hide"]
+[connection signal="hide" from="toolbox" to="Player" method="_on_toolbox_hide"]
