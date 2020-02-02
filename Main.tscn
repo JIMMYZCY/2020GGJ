@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=18 format=2]
+=======
 [gd_scene load_steps=10 format=2]
+>>>>>>> 5e743d4168015fe1383520cd08997c87265d09aa
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tres" type="TileSet" id=2]
@@ -7,8 +11,18 @@
 [ext_resource path="res://firebox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://furniture.tscn" type="PackedScene" id=6]
 [ext_resource path="res://My Song 2.wav" type="AudioStream" id=7]
+[ext_resource path="res://sha fa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://zhuo zi.tscn" type="PackedScene" id=9]
+[ext_resource path="res://yi zi 1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://yi zi 2.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
+<<<<<<< HEAD
+extents = Vector2( 563.779, 11.7459 )
+
+[sub_resource type="RectangleShape2D" id=2]
+=======
+>>>>>>> 5e743d4168015fe1383520cd08997c87265d09aa
 extents = Vector2( 3.8562, 298.936 )
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -31,11 +45,30 @@ tile_data = PoolIntArray( -131073, -1073741824, 0, -196608, -1073741824, 0, -196
 [node name="StaticBody2D2" type="StaticBody2D" parent="wall"]
 position = Vector2( -0.658066, 8.8951 )
 
+<<<<<<< HEAD
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="wall/StaticBody2D2"]
+visible = false
+position = Vector2( 528.658, 615.105 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="wall/StaticBody2D2"]
+visible = false
+position = Vector2( 514.082, -15.8667 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall/StaticBody2D2"]
+visible = false
+show_behind_parent = true
+position = Vector2( 1026.92, 293.534 )
+scale = Vector2( 1, 1.14868 )
+shape = SubResource( 2 )
+=======
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall/StaticBody2D2"]
 visible = false
 show_behind_parent = true
 position = Vector2( 2.32001, 301.468 )
 shape = SubResource( 1 )
+>>>>>>> 5e743d4168015fe1383520cd08997c87265d09aa
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="wall"]
 visible = false
@@ -44,8 +77,13 @@ position = Vector2( 24.3419, 8.8951 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall/StaticBody2D5"]
 visible = false
 show_behind_parent = true
+<<<<<<< HEAD
+position = Vector2( 2.32001, 301.468 )
+shape = SubResource( 2 )
+=======
 position = Vector2( 1001.92, 293.534 )
 shape = SubResource( 1 )
+>>>>>>> 5e743d4168015fe1383520cd08997c87265d09aa
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="wall"]
 visible = false
@@ -76,7 +114,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="firebox" parent="." instance=ExtResource( 5 )]
+<<<<<<< HEAD
+position = Vector2( 812.21, 578.635 )
+=======
 position = Vector2( 576.203, 572.924 )
+>>>>>>> 5e743d4168015fe1383520cd08997c87265d09aa
 collision_layer = 2
 collision_mask = 2
 
@@ -84,14 +126,31 @@ collision_mask = 2
 position = Vector2( 911.469, 430.558 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 399.293, 271.598 )
+position = Vector2( 428.722, 460.658 )
 collision_layer = 3
 collision_mask = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = ExtResource( 7 )
+<<<<<<< HEAD
+
+[node name="furniture2" type="Node" parent="."]
+
+[node name="yi zi 2" parent="furniture2" instance=ExtResource( 11 )]
+position = Vector2( 458.139, 308.103 )
+
+[node name="sha fa" parent="furniture2" instance=ExtResource( 8 )]
+position = Vector2( 856.6, 56.032 )
+
+[node name="zhuo zi" parent="furniture2" instance=ExtResource( 9 )]
+position = Vector2( 339.677, 153.15 )
+
+[node name="yi zi 1" parent="furniture2" instance=ExtResource( 10 )]
+position = Vector2( 544.666, 112.448 )
+=======
 autoplay = true
+>>>>>>> 5e743d4168015fe1383520cd08997c87265d09aa
 [connection signal="hide" from="." to="Player" method="_on_Main_hide"]
 [connection signal="body_entered" from="toolbox" to="Player" method="_on_toolbox_body_entered"]
 [connection signal="body_exited" from="toolbox" to="Player" method="_on_toolbox_body_exited"]

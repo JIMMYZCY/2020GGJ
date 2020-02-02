@@ -3,7 +3,7 @@
 [ext_resource path="res://zhuozi.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 152.487
+radius = 108.048
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 68.1982
