@@ -9,6 +9,7 @@ var s2 = 0
 var ms2 = 0
 var difficulty = 30
 signal warning
+signal game_end
 	
 func _process(delta):
 	randomize()
@@ -24,6 +25,7 @@ func _process(delta):
 			on_fire()
 	if s >= 40:
 		print("Boom")
+		emit_signal("game_end")
 	if is_on_fire == false:
 		ms = 0
 		s = 0

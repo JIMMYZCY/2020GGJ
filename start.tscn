@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+margin_right = 208.0
+margin_bottom = 59.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
