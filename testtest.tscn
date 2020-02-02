@@ -22,5 +22,7 @@ position = Vector2( 651.848, 416.726 )
 
 [node name="furniture2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 646.406, 151.941 )
+[connection signal="hide" from="toolbox" to="Player" method="_on_toolbox_hide"]
+[connection signal="hide" from="firebox" to="Player" method="_on_firebox_hide"]
 [connection signal="warning" from="furniture" to="Player" method="_on_furniture_warning"]
 [connection signal="warning" from="furniture2" to="Player" method="_on_furniture_warning"]
