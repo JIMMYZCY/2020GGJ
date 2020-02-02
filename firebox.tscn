@@ -4,7 +4,7 @@
 [ext_resource path="res://WechatIMG87.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 43.2374
+radius = 36.8843
 
 [node name="firebox" type="Area2D"]
 script = ExtResource( 1 )
@@ -16,7 +16,8 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1.56987, 1.56987 )
+position = Vector2( -3.97447, 2.86396 )
+scale = Vector2( 1.45297, 1.45297 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_firebox_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_firebox_body_exited"]
