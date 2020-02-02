@@ -14,10 +14,11 @@ func _physics_process(delta):
 
 
 func _on_toolbox_body_entered(body):
-	if body.is_hold_fire:
-		body.can_drop = false
-	elif body.get_name() == "Player":
-		pickable = true
+	if body.get_name() == "Player":
+		if body.is_hold_fire:
+			body.can_drop = false
+		elif body.get_name() == "Player":
+			pickable = true
 
 
 func _on_toolbox_body_exited(body):
