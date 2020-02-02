@@ -14,6 +14,9 @@ margin_left = 41.5486
 margin_top = 41.5486
 margin_right = -739.451
 margin_bottom = -431.451
+tab_size = 16
+text = "	          
+	          2333"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
