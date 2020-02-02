@@ -24,19 +24,24 @@ func _process(delta):
 		print("Boom")
 	if is_on_fire == false:
 		ms = 0
-		s = 0	
+		s = 0
+	detect()
 	
 func on_fire():
 	is_on_fire = true
 	print("is_on_fire")
 	
-func _on_furniture_body_entered(body):
-	if get_node("res://Player.tscn").is_hold_fire and is_on_fire:
-		can_off_fire = true
 
-func off_fire():
-	if can_off_fire and is_on_fire:
-		is_on_fire = false
+#func _on_furniture_body_entered(body):
+#	print(body.is_hold_fire)
+#	if body.is_hold_fire and is_on_fire and Input.is_action_pressed("ui_fix"):
+#		print("fire off")
+#		is_on_fire = false
+
+func detect():
+	var body = get_colliding_bodies()
+	print(body)
+	
 
 func _on_Timer_timeout():
 	if is_on_fire == true:
