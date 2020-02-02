@@ -98,7 +98,10 @@ position = Vector2( 704.658, 103.105 )
 scale = Vector2( -0.644456, 11.5829 )
 shape = SubResource( 7 )
 
-[node name="furniture2" type="Node" parent="."]
+[node name="furniture2" type="Node2D" parent="."]
+
+[node name="furniture" parent="furniture2" instance=ExtResource( 6 )]
+position = Vector2( 911.469, 430.558 )
 
 [node name="yi zi 2" parent="furniture2" instance=ExtResource( 11 )]
 position = Vector2( 458.139, 308.103 )
@@ -128,9 +131,6 @@ position = Vector2( 864, 560 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="furniture" parent="." instance=ExtResource( 6 )]
-position = Vector2( 911.469, 430.558 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 428.722, 460.658 )
 collision_layer = 3
@@ -140,12 +140,12 @@ collision_mask = 3
 visible = false
 stream = ExtResource( 7 )
 [connection signal="hide" from="." to="Player" method="_on_Main_hide"]
+[connection signal="warning" from="furniture2/furniture" to="Player" method="_on_furniture_warning"]
 [connection signal="body_entered" from="toolbox" to="Player" method="_on_toolbox_body_entered"]
 [connection signal="body_exited" from="toolbox" to="Player" method="_on_toolbox_body_exited"]
 [connection signal="hide" from="toolbox" to="Player" method="_on_toolbox_hide"]
 [connection signal="body_entered" from="firebox" to="Player" method="_on_firebox_body_entered"]
 [connection signal="body_exited" from="firebox" to="Player" method="_on_firebox_body_exited"]
 [connection signal="hide" from="firebox" to="Player" method="_on_firebox_hide"]
-[connection signal="warning" from="furniture" to="Player" method="_on_furniture_warning"]
 [connection signal="firetool_showup" from="Player" to="firebox" method="_on_Player_firetool_showup"]
 [connection signal="toolbox_showup" from="Player" to="toolbox" method="_on_Player_toolbox_showup"]
