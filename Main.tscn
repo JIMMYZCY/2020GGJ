@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tres" type="TileSet" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://zhuo zi.tscn" type="PackedScene" id=9]
 [ext_resource path="res://yi zi 1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://yi zi 2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://dian shi.tscn" type="PackedScene" id=12]
+[ext_resource path="res://bing xiang.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 705.501, 62.7012 )
@@ -51,6 +53,7 @@ tile_data = PoolIntArray( -131073, -1073741824, 0, -196608, -1073741824, 0, -196
 [node name="wall" type="Node" parent="."]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="wall"]
+visible = false
 position = Vector2( -0.658066, 8.8951 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="wall/StaticBody2D2"]
@@ -100,7 +103,7 @@ shape = SubResource( 7 )
 
 [node name="furniture2" type="Node2D" parent="."]
 
-[node name="furniture" parent="furniture2" instance=ExtResource( 6 )]
+[node name="di tan" parent="furniture2" instance=ExtResource( 6 )]
 position = Vector2( 911.469, 430.558 )
 
 [node name="yi zi 2" parent="furniture2" instance=ExtResource( 11 )]
@@ -114,6 +117,14 @@ position = Vector2( 339.677, 153.15 )
 
 [node name="yi zi 1" parent="furniture2" instance=ExtResource( 10 )]
 position = Vector2( 544, 112 )
+
+[node name="bing xiang" parent="furniture2" instance=ExtResource( 13 )]
+position = Vector2( 35.3903, 382.991 )
+rotation = -1.58359
+
+[node name="dian shi" parent="furniture2" instance=ExtResource( 12 )]
+position = Vector2( 762.172, 107.023 )
+rotation = -0.0115041
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 0
@@ -132,15 +143,18 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 428.722, 460.658 )
+position = Vector2( 348.461, 454.415 )
 collision_layer = 3
 collision_mask = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = ExtResource( 7 )
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+visible = false
 [connection signal="hide" from="." to="Player" method="_on_Main_hide"]
-[connection signal="warning" from="furniture2/furniture" to="Player" method="_on_furniture_warning"]
+[connection signal="warning" from="furniture2/di tan" to="Player" method="_on_furniture_warning"]
 [connection signal="body_entered" from="toolbox" to="Player" method="_on_toolbox_body_entered"]
 [connection signal="body_exited" from="toolbox" to="Player" method="_on_toolbox_body_exited"]
 [connection signal="hide" from="toolbox" to="Player" method="_on_toolbox_hide"]
