@@ -29,9 +29,9 @@ animations = [ {
 "name": "hold_fire_ex",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "fire_idle",
+"name": "hold_tool",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -39,15 +39,15 @@ animations = [ {
 "name": "tool_idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "fire_idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "hold_tool",
-"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
