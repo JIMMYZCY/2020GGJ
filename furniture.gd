@@ -40,7 +40,7 @@ func on_fire():
 	
 
 func _on_furniture_body_entered(body):
-	print(body.is_hold_fire)
+	print(str(body.is_hold_fire) + "hold fire")
 	if body.is_hold_fire and is_on_fire:
 		can_off_fire = true
 

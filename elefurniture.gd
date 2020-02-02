@@ -29,18 +29,18 @@ func _process(delta):
 	if can_off_fire and Input.is_action_pressed("ui_fix"):
 		can_off_fire = false
 		is_on_fire = false
-		print("fire off")
+		print("ele off")
 	
 func on_fire():
 	if not is_on_fire:
 		emit_signal("warning")
 		is_on_fire = true
-	print("is_on_fire")
+	print("is_on_ele")
 	
 	
 
 func _on_furniture_body_entered(body):
-	print(body.is_hold_tool)
+	print(str(body.is_hold_tool) + "hold tool")
 	if body.is_hold_tool and is_on_fire:
 		can_off_fire = true
 
