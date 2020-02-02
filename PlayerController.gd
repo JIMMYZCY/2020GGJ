@@ -88,14 +88,14 @@ func get_input():
 
 
 func dropfire():
-	if is_hold_fire and Input.is_action_pressed("ui_drop") and can_drop:
+	if is_hold_fire and Input.is_action_just_pressed("ui_drop") and can_drop:
 		is_hold_fire = false
 		print("drop")
 		print(self.transform)
 		emit_signal("firetool_showup",self.global_position)
 
 func droptool():
-	if is_hold_tool and Input.is_action_pressed("ui_drop") and can_drop:
+	if is_hold_tool and Input.is_action_just_pressed("ui_drop") and can_drop:
 		is_hold_tool = false
 		print('boxdrop')
 		emit_signal("toolbox_showup",self.global_position)

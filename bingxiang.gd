@@ -7,7 +7,7 @@ var ms = 0
 var s = 0
 var s2 = 0
 var ms2 = 0
-var difficulty = 30
+var difficulty = 50
 signal warning
 signal game_end
 	
@@ -23,7 +23,7 @@ func _process(delta):
 		print(temp)
 		if temp <= fire_num:
 			on_fire()
-	if s >= 40:
+	if s >= 10:
 		print("Boom")
 		emit_signal("game_end")
 	if is_on_fire == false:

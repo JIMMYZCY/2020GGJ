@@ -7,6 +7,7 @@ var game_end = false
 
 func _ready():
 	get_node("Label").hide()
+	get_node("AudioStreamPlayer2D").playing = true
 
 func _process(delta):
 	if ms>9:
@@ -25,12 +26,12 @@ func _process(delta):
 func _on_Timer_timeout():
 	if game_end==false:
 		ms +=1
-	pass # Replace with function body.
 
 
 func _on_furniture_game_end():
 	game_end = true
+	get_node("AudioStreamPlayer2D").stop()
 	set_text("")
-	get_node("Label").set_text(str(m)+":"+str(s)+":"+str(ms))
+	get_node("Label").set_text(str(m)+":"+str(s))
 	get_node("Label").show()
 	

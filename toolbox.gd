@@ -7,7 +7,7 @@ signal picktool
 
 
 func _physics_process(delta):
-	if pickable and Input.is_action_pressed("ui_pick"):
+	if pickable and Input.is_action_just_pressed("ui_pick"):
 		hide()
 		pickable = false
 		

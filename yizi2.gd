@@ -23,7 +23,7 @@ func _process(delta):
 		print(temp)
 		if temp <= fire_num:
 			on_fire()
-	if s >= 40:
+	if s >= 10:
 		print("Boom")
 		emit_signal("game_end")
 	if is_on_fire == false:
