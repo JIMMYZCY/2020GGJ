@@ -9,6 +9,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
@@ -26,7 +31,7 @@ script = ExtResource( 2 )
 position = Vector2( 13.4125, 81.9778 )
 rotation = 1.5708
 frames = SubResource( 1 )
-animation = "run"
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8.16223, -4.08115 )

@@ -26,24 +26,19 @@ func get_input():
 	var rotation_dir = 0 
 	if Input.is_action_pressed("ui_left"):
 		x_dir -= 1
-		if not is_playing:
-			$AnimatedSprite.play("run")
-			is_playing = true
-	if Input.is_action_pressed("ui_right"):
+		$AnimatedSprite.play("run")
+	elif Input.is_action_pressed("ui_right"):
 		x_dir += 1
-		if not is_playing:
-			$AnimatedSprite.play("run")
-			is_playing = true
-	if Input.is_action_pressed("ui_down"):
+		$AnimatedSprite.play("run")
+	elif Input.is_action_pressed("ui_down"):
 		y_dir += 1
-		if not is_playing:
-			$AnimatedSprite.play("run")
-			is_playing = true
-	if Input.is_action_pressed("ui_up"):
+		$AnimatedSprite.play("run")
+		
+	elif Input.is_action_pressed("ui_up"):
 		y_dir -= 1
-		if not is_playing:
-			$AnimatedSprite.play("run")
-			is_playing = true
+		$AnimatedSprite.play("run")
+	else:
+		$AnimatedSprite.play("idle")
 	
 
 	
