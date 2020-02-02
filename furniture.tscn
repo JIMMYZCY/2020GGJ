@@ -4,18 +4,21 @@
 [ext_resource path="res://furniture.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 48.0518
-height = 89.5606
+radius = 46.1687
+height = 102.746
 
 [node name="furniture" type="Area2D"]
-position = Vector2( 781.82, 383.883 )
+position = Vector2( 599.104, 344.326 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 9.41833, 0.941833 )
+position = Vector2( 10.3604, 3.76724 )
 texture = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
