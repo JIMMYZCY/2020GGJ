@@ -81,13 +81,10 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="furniture" parent="." instance=ExtResource( 6 )]
-<<<<<<< HEAD
 position = Vector2( 911.469, 430.558 )
 collision_layer = 0
 collision_mask = 0
-=======
-position = Vector2( 911.469, 431.713 )
->>>>>>> 63d5f069dc1820cd96fa50a0bd7e504c4d216402
+
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 399.293, 271.598 )
